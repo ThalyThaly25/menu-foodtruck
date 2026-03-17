@@ -1,3 +1,11 @@
+fetch("https://menu-foodtruck.onrender.com/menu")
+  .then(res => res.json())
+  .then(data => mostrarMenu(data))
+  .catch(() => {
+    console.log("modo offline");
+    mostrarMenu(DISHES); // backup local
+  });
+
 (function(){
   // ── Inline Manifest via Blob ─────────────────────────────────────
   const manifest = {
