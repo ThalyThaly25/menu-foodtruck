@@ -28,34 +28,6 @@
 
   document.head.appendChild(link);
 
-
-  // ── Service Worker ─────────────────────────
-
-  const swCode = `
-    const CACHE = 'uncle-moro-v1';
-
-    self.addEventListener('install', event => {
-      self.skipWaiting();
-    });
-
-    self.addEventListener('activate', event => {
-      self.clients.claim();
-    });
-
-    self.addEventListener('fetch', event => {
-      event.respondWith(fetch(event.request).catch(() => caches.match(event.request)));
-    });
-  `;
-
-  if ('serviceWorker' in navigator) {
-
-    const swBlob = new Blob([swCode], {type:'text/javascript'});
-    const swUrl = URL.createObjectURL(swBlob);
-
-    navigator.serviceWorker.register(swUrl).catch(()=>{});
-  }
-
-
   // ── PWA Banner ─────────────────────────
 
   let deferredPrompt = null;
