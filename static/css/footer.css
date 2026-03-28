@@ -15,7 +15,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   background: linear-gradient(160deg, #e0f7fa 0%, #b3ecf3 100%);
   min-height: 100dvh;
-  display: flex;
+  display: contents;
   flex-direction: column;
   justify-content: flex-end;
 }
