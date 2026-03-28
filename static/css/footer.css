@@ -14,8 +14,8 @@ html {
 body {
   font-family: 'DM Sans', sans-serif;
   background: linear-gradient(160deg, #e0f7fa 0%, #b3ecf3 100%);
-  min-height: 100vh;
-  display: contents;
+  min-height: 100dvh;
+  display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
