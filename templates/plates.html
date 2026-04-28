@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0096c7">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Uncle Moro">
+<meta name="description" content="Uncle Moro Varadero Food Truck – Authentic Cuban & Street Food. Saskatchewan Powwows.">
+<meta name="mobile-web-app-capable" content="yes">
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/plates.css">
+
+<title>Uncle Moro – Products</title>
+</head>
+<body>
+
+<div class="topbar" id="topbar">
+  <a class="back-btn" onclick="location.href='/'">← Menu</a>
+</div>
+
+{% if dish %}
+<!-- Hero section -->
+<div class="hero" style="background:linear-gradient(135deg,#003d6b,#0096c7);">
+  <div class="hero-bg">
+      <img src="{{ dish.emoji }}" alt="{{ dish.name }}" style="width:100%; height:100%; object-fit:cover; border-radius:10px;">
+  </div>  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-category">{{ dish.category }}</div>
+    <div class="hero-name">{{ dish.name }}</div>
+    <div class="hero-price-row">
+      <span class="hero-price">{{ dish.price }}</span>
+      <span class="hero-badge" style="background:#ffe566;color:#003d6b;">{{ dish.badge }}</span>
+    </div>
+  </div>
+</div>
+
+<!-- Wave divider -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+    <path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z" fill="#fffdf5"/>
+  </svg>
+</div>
+
+<!-- Dish body -->
+<div class="dish-body">
+  <div class="stars">
+    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+    <span style="font-size:12px;color:#aaa;margin-left:4px;font-weight:800; padding-right: 20px;">5.0 · All-time #1</span>
+  </div>
+
+  <div class="section-label" style="color:#0096c7;">The dish</div>
+  <div class="desc-text">
+    {{ dish.desc }}
+  </div>
+
+  <hr class="wavy-line">
+
+  <div class="inspo-card" style="background:linear-gradient(135deg,#003d6b,#005f92);">
+    <div class="inspo-label">🌊 Inspiration</div>
+    <div class="inspo-text">
+      {{ dish.inspo }}
+    </div>
+  </div>
+
+  <div class="section-label" style="color:#0096c7;">Ingredients</div>
+  <div class="ingredients">
+    {% if dish.ingredients %}
+      {% for ing in dish.ingredients %}
+        <span class="ing" data-bg="{{ ing.bg_color }}" data-color="{{ ing.text_color }}">{{ ing.text }}</span>
+      {% endfor %}
+      <script>document.querySelectorAll('.ing[data-bg]').forEach(function(el){el.style.background=el.dataset.bg;el.style.color=el.dataset.color;});</script>
+    {% endif %}
+  </div>
+
+  <div class="varadero-tag">
+    <span class="vt-icon">🏖</span>
+    <span class="vt-text">From our kitchen, from our truck, straight to your hands.</span>
+  </div>
+</div>
+
+
+  <div class="review-block">
+
+    <!-- ── COMMENTS LIST ── -->
+  <div class="comments-block">
+
+  <div class="comments-tab" id="list-review">
+    <div class="comments-tab-left">
+      <span class="comments-tab-icon">💬</span>
+      <span class="comments-tab-title">What people say</span>
+    </div>
+    <span class="comments-count">{{ reviews|length }} reviews</span>
+  </div>
+
+  <div class="avg-bar">
+    <div class="avg-score">{{ avg_score }}</div>
+    <div class="avg-right">
+      <div class="avg-stars">
+        <span class="star-filled">★</span>
+        <span class="star-filled">★</span>
+        <span class="star-filled">★</span>
+        <span class="star-filled">★</span>
+        <span class="star-filled">★</span>
+      </div>
+      <div class="avg-label">Average · {{ reviews|length }} reviews</div>
+    </div>
+  </div>
+
+  <div class="comments-container">
+    <div class="comments-list">
+      {% if reviews %}
+        {% for r in reviews %}
+          <div class="comment-card">
+            <div class="comment-top">
+              <div class="comment-author">
+                <div class="comment-avatar">{{ r.name[0]|upper }}</div>
+                <div class="comment-meta">
+                  <div class="comment-name">{{ r.name }}</div>
+                  <div class="comment-city">📍 {{ r.city }}</div>
+                </div>
+              </div>
+              <div class="comment-stars">
+                {% for i in range(r.rating) %}
+                  <span class="star-filled">★</span>
+                {% endfor %}
+                {% for i in range(5 - r.rating) %}
+                  <span class="star-empty">☆</span>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="comment-text">{{ r.comment }}</div>
+            <div class="comment-date">{{ r.created_at.strftime('%B %d, %Y') }}</div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="comment-card">
+          <div class="comment-text">No reviews yet. Be the first to try the {{ dish.name }}!</div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+    <div class="review-tab">
+      <div class="review-tab-left">
+        <span class="review-tab-icon"></span>
+        <span class="review-tab-title">Leave a Review</span>
+      </div>
+      <span class="review-tab-pill">About the dish</span>
+    </div>
+    
+    <form class="review-form" method="post" action="/plates">
+      <input type="hidden" name="plate" value="{{ plate_name }}">
+
+      <div class="fields-row">
+        <div class="field">
+          <label for="name_input">Name</label>
+          <input type="text" id="name_input" name="name" placeholder="Your name" required maxlength="30">
+        </div>
+        <div class="field">
+          <label for="city_input">City</label>
+          <input type="text" id="city_input" name="city" placeholder="Your city" required maxlength="30">
+        </div>
+      </div>
+
+      <div class="stars-line">
+        <span class="stars-line-lbl">Rating</span>
+        <div class="stars">
+          <input type="radio" id="s5" name="rating" value="5"><label for="s5">★</label>
+          <input type="radio" id="s4" name="rating" value="4"><label for="s4">★</label>
+          <input type="radio" id="s3" name="rating" value="3"><label for="s3">★</label>
+          <input type="radio" id="s2" name="rating" value="2"><label for="s2">★</label>
+          <input type="radio" id="s1" name="rating" value="1"><label for="s1">★</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="comment_input">Comment</label>
+        <textarea id="comment_input" name="comment" maxlength="300" placeholder="What did you think of this dish?" required></textarea>
+      </div>
+
+      <button type="submit" >
+         <span><a href="#list-review"></a>Send Review</span>
+      </button>
+
+    </form>
+  </div>
+
+{% else %}
+<h2>Dish Not Found 😢</h2>
+<p>Sorry, we couldn’t find the plate you were looking for.</p>
+{% endif %}
+
+<!--FOOTER-->
+{% include "footer.html" %}
+
+<script src="/static/js/plates.js"></script>
+<script src="/static/js/script.js"></script>
+</body>
+</html>
