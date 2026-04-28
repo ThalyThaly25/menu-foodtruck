@@ -227,10 +227,6 @@ body {
   text-decoration: none;
   transition: background .2s, transform .2s;
 }
-.soc-btn:hover { transform: translateY(-2px) scale(1.1); }
-.soc-btn.fb:hover { background: #1877f2; border-color: #1877f2; }
-.soc-btn.ig:hover { background: #e1306c; border-color: #e1306c; }
-.soc-btn.wa:hover { background: #1877f2; border-color: #1877f2; }
  
 .logo-ring img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
