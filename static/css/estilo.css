@@ -230,8 +230,7 @@ body {
 .soc-btn:hover { transform: translateY(-2px) scale(1.1); }
 .soc-btn.fb:hover { background: #1877f2; border-color: #1877f2; }
 .soc-btn.ig:hover { background: #e1306c; border-color: #e1306c; }
-.soc-btn.tt:hover { background: #111;    border-color: #fff; }
-.soc-btn.wa:hover { background: #25d366; border-color: #25d366; }
+.soc-btn.me:hover { background: #1877f2; border-color: #1877f2; }
  
 .logo-ring img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
