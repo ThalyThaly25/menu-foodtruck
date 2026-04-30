@@ -32,7 +32,7 @@ dishes = {
     "cuban": {
         "name": "Cuban Sandwich",
         "category": "Sandwiches",
-        "price": "$10",
+        "price": "",
         "badge": "Fan Fave",
         "emoji": "/static/images/pan.png",
         "desc": "A massive stack featuring your choice of Chicken, Pork, or Beef, plus seared ham, melted cheese, lettuce, and tomato on a toasted bun. No frills, just pure Cuban-inspired flavor",
@@ -51,7 +51,7 @@ dishes = {
     "tacos": {
         "name": "Tacos ×2",
         "category": "Mexican Style",
-        "price": "$15",
+        "price": "",
         "badge": "Popular",
         "emoji": "/static/images/tacos2.png",
         "desc": "Two oversized tacos filled with charcoal-grilled meat, sautéed peppers, and melted cheese. Topped with crisp garden veggies and fresh scallions. Messy, hearty, and full of island flavor",
@@ -71,7 +71,7 @@ dishes = {
     "quesadilla": {
         "name": "Kidsadilla",
         "category": "Mexican Style",
-        "price": "$10",
+        "price": "",
         "badge": "Kid Friendly ✓",
         "emoji": "/static/images/kid2.png",
         "desc": "The perfect choice for our youngest foodies. We take a soft flour tortilla and fill it with a generous layer of melted cheese and premium seared ham, grilling it until it's golden and crispy on the outside. It’s simple, delicious, and exactly what they need for a quick, mess-free meal. Served warm and ready to enjoy!",
@@ -86,7 +86,7 @@ dishes = {
     "tacofries": {
         "name": "Taco Fries",
         "category": "Street Food",
-        "price": "$15",
+        "price": "",
         "badge": "Must Try",
         "emoji": "/static/images/fries2.JPG",
         "desc": "A tropical twist on your favorite comfort food. Golden crispy fries topped with savory Cuban-style seasoned ground beef, sautéed red bell peppers, and a generous layer of shredded melted cheese. Finished with fresh chives for that perfect Caribbean pop of color.",
@@ -104,7 +104,7 @@ dishes = {
     "rice": {
         "name": "Rice & Meat",
         "category": "Cuban Tradition",
-        "price": "$15",
+        "price": "",
         "badge": "Authentic",
         "emoji": "/static/images/rice.png",
         "desc": "Classic Cuban Congrí (black bean rice) with flame-seared grilled meat. Authentic and delicious.",
