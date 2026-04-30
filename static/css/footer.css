@@ -62,7 +62,7 @@ footer {
   align-items: center;
   gap: 10px;
   color: rgba(255,255,255,.85);
-  font-size: 13px;
+  font-size: 17px;
   font-weight: 500;
   text-decoration: none;
   transition: color .2s;
@@ -132,7 +132,7 @@ footer {
 .ftr-links a:hover { color: rgba(255,255,255,.85); }
 
 @media (max-width: 560px) {
-  .footer-inner { flex-direction: column; align-items: flex-start; }
-  .social-col { align-items: flex-start; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .footer-inner { flex-direction: column; align-items: center; }
+  .social-col { align-items: center; }
+  .footer-bottom { flex-direction: column; align-items: center; }
 }
